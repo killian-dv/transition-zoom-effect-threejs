@@ -51,14 +51,15 @@ export default class Sketch {
     window.addEventListener("resize", this.resize.bind(this));
   }
   addObjects() {
-    this.geometry = new THREE.PlaneGeometry(500, 200, 100, 100);
+    this.geometry = new THREE.PlaneGeometry(300, 300, 100, 100);
     this.material = new THREE.ShaderMaterial({
       // wireframe: true,
       uniforms: {
         time: { value: 1.0 },
         uProgress: { value: 1.0 },
         uTexture: { value: new THREE.TextureLoader().load(texture) },
-        resolution: { value: new THREE.Vector2() },
+        uResolution: { value: new THREE.Vector2(this.width, this.height) },
+        uQuadSize: { value: new THREE.Vector2(300, 300) },
       },
       vertexShader: vertex,
       fragmentShader: fragment,
@@ -66,6 +67,8 @@ export default class Sketch {
 
     this.mesh = new THREE.Mesh(this.geometry, this.material);
     this.scene.add(this.mesh);
+    this.mesh.position.x = 300;
+    this.mesh.rotation.z = 0.5;
   }
 
   render() {

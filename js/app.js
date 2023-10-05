@@ -28,6 +28,9 @@ export default class Sketch {
     this.controls = new OrbitControls(this.camera, this.renderer.domElement);
 
     this.asscroll = new ASScroll();
+    this.asscroll.enable({
+      horizontalScroll: true,
+    });
 
     this.time = 0;
     this.setupSettings();

@@ -13,12 +13,12 @@ void main () {
   float waves = sine*0.1*sin(5.*length(uv) + 10.*uProgress); // Modify the value multiplied to uProgress to change the number of the waves
   vec4 defaultState = modelMatrix*vec4( position, 1.0);
   vec4 fullSreenState = vec4( position, 1.0);
-  fullSreenState.x *= uResolution.x/uQuadSize.x;
-  fullSreenState.y *= uResolution.y/uQuadSize.y;
+  fullSreenState.x *= uResolution.x;
+  fullSreenState.y *= uResolution.y;
   float cornersProgress = mix(mix(uCorners.z, uCorners.w, uv.x), mix(uCorners.x, uCorners.y, uv.x), uv.y);
 
-  vec4 finalState = mix(defaultState, fullSreenState, uProgress + waves);
+  vec4 finalState = mix(defaultState, fullSreenState, cornersProgress);
 
-  vSize = mix(uQuadSize, uResolution, uProgress);
+  vSize = mix(uQuadSize, uResolution, cornersProgress);
   gl_Position = projectionMatrix * viewMatrix * finalState ;
 }

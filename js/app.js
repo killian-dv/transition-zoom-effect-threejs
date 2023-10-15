@@ -6,6 +6,7 @@ import vertex from "../shaders/vertex.glsl";
 import * as dat from "dat.gui";
 import texture from "../assets/texture.jpg";
 import gsap from "gsap";
+import barba from "@barba/core";
 
 export default class Sketch {
   constructor(options) {
@@ -41,7 +42,14 @@ export default class Sketch {
     this.addObjects();
     this.resize();
     this.render();
+    this.barba();
     this.setupResize();
+  }
+
+  barba() {
+    barba.init({
+      // ...
+    });
   }
 
   setupSettings() {

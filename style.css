@@ -65,7 +65,7 @@ canvas {
 }
 .item img {
   width: 30vw;
-  height: 30vw;
+  height: auto;
   opacity: 0.1;
 }
 /* single */

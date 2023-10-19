@@ -113,13 +113,14 @@ export default class Sketch {
     this.mesh.position.x = 300;
 
     this.images = [...document.querySelectorAll(".js-image")];
+    const loader = new THREE.TextureLoader();
 
     this.imageStore = this.images.map((img) => {
       let bounds = img.getBoundingClientRect();
       let m = this.material.clone();
       this.materials.push(m);
-      let texture = new THREE.Texture(img);
-      texture.needsUpdate = true;
+      let texture = loader.load(img.src);
+
       m.uniforms.uTexture.value = texture;
 
       img.addEventListener("mouseover", () => {

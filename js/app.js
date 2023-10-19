@@ -4,7 +4,7 @@ import ASScroll from "@ashthornton/asscroll";
 import fragment from "../shaders/fragment.glsl";
 import vertex from "../shaders/vertex.glsl";
 import * as dat from "dat.gui";
-import texture from "../assets/texture.jpg";
+import texture from "../assets/case1.jpg";
 import gsap from "gsap";
 import barba from "@barba/core";
 

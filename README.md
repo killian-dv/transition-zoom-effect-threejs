@@ -2,9 +2,9 @@
 
 ![Design preview](./preview.png)
 
-App link : [https://transition-zoom-effect-threejs.vercel.app/](https://transition-zoom-effect-threejs.vercel.app/)
+Portfolio website with Three.js page transitions. App link : [https://transition-zoom-effect-threejs.vercel.app/](https://transition-zoom-effect-threejs.vercel.app/).
 
-I've built another version of this application using [Eleventy](https://www.11ty.dev/). The repository is available [here](https://github.com/killian-dv/transition-zoom-effect-eleventy)
+I've built another version of this application using [Eleventy](https://www.11ty.dev/). The repository is available [here](https://github.com/killian-dv/transition-zoom-effect-eleventy).
 
 ## Built With
 
